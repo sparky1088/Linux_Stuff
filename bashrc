@@ -111,6 +111,7 @@ alias hist="history"
 alias ping="ping -c 5"
 alias bashreload="source ~/.bashrc"
 alias reloadbash="bashreload"
+alias freem="free -hm"
 #install colordiff package
 alias diff="colordiff"
 alias ports="sudo netstat -tuplan"
