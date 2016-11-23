@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Cron script for checking LAN connectivity
+# Cron script for checking LAN connectivity and restarting the interface
 
 # Ping count is set aggressively to 1, increase depending what you want.
 PING_COUNT=1
@@ -17,6 +17,7 @@ then
     # This will log a message in system log (see manpage).
     logger "Network access DOWN"
     #service network restart
+    #change interface name accordingly
     sudo ifup bond0
 else
     logger "Network access OK"
