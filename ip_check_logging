@@ -1,0 +1,1 @@
+while [ true ];do (date;ip a|grep "inet ";ip link show em1)>>ip.log;sleep 1m;done
