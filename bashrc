@@ -99,8 +99,9 @@ alias fgrep='fgrep --color=auto'
 alias ssh="TERM=linux ssh"
 alias doMagic="pithos"
 alias df="df -H"
-alias today='cal | grep -C7 --color=auto "\<$(date +%d)\>"'
+alias today='cal | grep -C7 --color=auto "\<$(date +%Oe)\>"'
 alias calloop='while true;do clear; today; sleep 30m; done'
+alias rand="/bin/bash /home/mwaldorf/randomwordgen.sh"
 alias chbg="/bin/bash /home/mwaldorf/backgroundchanger.sh"
 alias changebg="chbg"
 alias vpnstart="sudo iked;qikea"
@@ -133,14 +134,22 @@ alias update='sudo dnf update'
 #download packages for vnstat,iftop,tcpdump,ethtool
 alias dnstop='dnstop -l 5  enp0s25'
 alias vnstat='vnstat -i enp0s25'
+# interface traffic
 alias iftop='iftop -i enp0s25'
 alias tcpdump='tcpdump -i enp0s24'
 alias ethtool='ethtool enp0s25'
- 
+
+## remoting into windows machines
+alias remote='rdesktop'
+
+## Shrewsoft VPN Help
+alias vpnhelp="echo -e 'ikec -r ConnName -u USER -p PASSWORD -a \nArk-LasVegas\nArk-Lindon\nArk-Lindonfailover\nBay Health\nBay Health Vegas\nBronx Lindon\nDHIN\nHASA\nJHIE Lindon\nPOC\nor use vpnstart to launch the ShrewSoft GUI'"
+
 # work on wlan0 by default #
 # Only useful for laptop as all servers are without wireless interface
 alias iwconfig='iwconfig wlan0'
 
+# some memory info
 alias vmstat='vmstat -w 5'
 alias meminfo='free -m -h -l -t'
  
@@ -154,3 +163,24 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
  
 ## Get server cpu info ##
 alias cpuinfo='lscpu'
+
+## Start Virtual Windows Machine
+alias startvm='VBoxManage startvm Kumonga'
+
+## Weather
+alias W='head -7 ~/.wttr.in | tail -5'
+
+## Emulator
+alias psx='pcsxr &'
+alias ps2='pcsx2 &'
+alias snes='zsnes &'
+alias play='sudo xboxdrv --silent &'
+alias controller='play &'
+alias games='jobs'
+
+## Color tests
+alias colortest1='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)
+'
+alias colortest2='/bin/bash /home/mwaldorf/colortest.sh'
+alias colortest3='for x in {0..8}; do for i in {30..37}; do for a in {40..47}; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo ""'
+
