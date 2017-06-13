@@ -143,7 +143,8 @@ alias ethtool='ethtool enp0s25'
 alias remote='rdesktop'
 
 ## Shrewsoft VPN Help
-alias vpnhelp="echo -e 'ikec -r ConnName -u USER -p PASSWORD -a \nArk-LasVegas\nArk-Lindon\nArk-Lindonfailover\nBay Health\nBay Health Vegas\nBronx Lindon\nDHIN\nHASA\nJHIE Lindon\nPOC\nor use vpnstart to launch the ShrewSoft GUI'"
+alias VPN="/bin/bash /home/mwaldorf/shrewVPNconnect.sh"
+alias vpnhelp="echo -e 'shrewVPNconnect.sh can be used to connect to the Cisco VPNs via CLI\nThe VPN command will run shrewVPNconnect.sh\nikec -r ConnName -u USER -p PASSWORD -a \nArk-LasVegas\nArk-Lindon\nArk-Lindonfailover\nBay-Health\nBay-Health-Vegas\nBronx\nDHIN\nHASA\nJHIE\nPOC\nor use vpnstart to launch the ShrewSoft GUI'"
 
 # work on wlan0 by default #
 # Only useful for laptop as all servers are without wireless interface
