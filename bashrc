@@ -169,7 +169,7 @@ alias cpuinfo='lscpu'
 alias startvm='VBoxManage startvm Kumonga'
 
 ## Weather
-alias W='head -7 ~/.wttr.in | tail -5'
+alias W='curl -s -N wttr.in | head -7'
 
 ## Emulator
 alias psx='pcsxr &'
