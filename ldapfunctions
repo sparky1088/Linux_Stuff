@@ -1,0 +1,268 @@
+# These are jacobs useful ldap functions. 
+# I have edited out some things as they only pertain to a specific system.
+
+ldap () {
+    # Set the defaults
+    extraArgs=""
+    HOST="ldaps://"
+    BRANCH="dc=something,dc=com"
+    BINDUSER="uid=bindusername"
+    setBind=0
+    PASSWORD="$(sudo cat /path/to/password/file)"
+    hasNewPass=0
+    COMMAND="$1"
+    USER=
+    GROUP=
+    EXPIRATION="+90 days"
+    # Run shift once to get past the command argument, unless the first argument is the help option
+    if [[ "$1" != "--help" ]]; then
+        shift
+    fi
+    while [[ $# -gt 0 ]]; do
+        key="$1"
+
+        case $key in
+            -H|--host)
+                shift
+                HOST="$1"
+            ;;
+            -H=*|--host=*)
+                HOST="${1#*=}"
+            ;;
+            -D|--bind)
+                shift
+                BIND="$1"
+                setBind=1
+            ;;
+            -D=*|--bind=*)
+                BIND="${1#*=}"
+                setBind=1
+            ;;
+            -w|--password)
+                shift
+                PASSWORD="$1"
+            ;;
+            -w=*|--password=*)
+                PASSWORD="${1#*=}"
+            ;;
+            -s|--new-password)
+                shift
+                extraArgs+="-s \"$1\""
+                hasNewPass=1
+            ;;
+            -s=*|--new-password=*)
+                newPass="${1#*=}"
+                extraArgs+="-s \"${newPass}\""
+                hasNewPass=1
+            ;;
+            -m|--manager)
+                BINDUSER="cn=ldapmanagerBindUser"
+                PASSWORD="$(sudo cat /path/to/manager/password/file)"
+            ;;
+            -b|--branch|--base|--basedn)
+                shift
+                BRANCH="$1"
+            ;;
+            -b=*|--branch=*|--base=*|--basedn=*)
+                BRANCH="${1#*=}"
+            ;;
+            -B|--bind-user)
+                shift
+                BINDUSER="uid=$1"
+            ;;
+            -B=*|--bind-user=*)
+                BINDUSER="uid=${1#*=}"
+            ;;
+            --user|--uid)
+                shift
+                USER="$1"
+            ;;
+            --user=*|--uid=*)
+                USER="${1#*=}"
+            ;;
+            --group|--gid)
+                shift
+                GROUP="$1"
+            ;;
+            --group=*|--gid=*)
+                GROUP="${1#*=}"
+            ;;
+            --exp|--expire|--expiration)
+                shift
+                EXPIRATION="$1"
+            ;;
+            --exp=*|--expire=*|--expiration=*)
+                EXPIRATION="${1#*=}"
+            ;;
+            --help)
+                COMMAND="help"
+                break
+            ;;
+            *)
+                extraArgs+="$1 "
+            ;;
+        esac
+        shift
+    done
+
+    if [[ $setBind -ne 1 ]]; then
+        BIND="$BINDUSER,ou=People,$BRANCH"
+    fi
+
+    if [[ "$COMMAND" == "search" ]]; then
+        eval sudo ldapsearch -H "$HOST" -D "$BIND" -w "$PASSWORD" "$extraArgs"
+    elif [[ "$COMMAND" == "modify" || "$COMMAND" == "mod" ]]; then
+        eval sudo ldapmodify -H "$HOST" -D "$BIND" -w "$PASSWORD" "$extraArgs"
+    elif [[ "$COMMAND" == "add" ]]; then
+        eval sudo ldapadd -H "$HOST" -D "$BIND" -w "$PASSWORD" "$extraArgs"
+    elif [[ "$COMMAND" == "passwd" || "$COMMAND" == "password" ]]; then
+        if [[ -z "$USER" ]]; then
+            echo "The USER var is not set. Use the --uid or --user arg to specify which user's password you wish to change."
+            return 1
+        fi
+        if [[ $hasNewPass -ne 1 ]]; then
+            echo -e "The passwd command requires a new password to be set.\nUse the '-s' option to specify the user's new password."
+            return 1
+        fi
+        eval sudo ldappasswd -H "$HOST" -D "$BIND" -w "$PASSWORD" "uid=$USER,ou=People,$BRANCH" "$extraArgs"
+    elif [[ "$COMMAND" == "groups" ]]; then
+        if [[ -z "$USER" ]]; then
+            echo "The USER var is not set. Use the --uid or --user arg to specify which user's groups you want."
+            return 1
+        fi
+        eval sudo ldapsearch -H "$HOST" -D "$BIND" -w "$PASSWORD" "uid=$USER" memberOf "$extraArgs" > groups.txt
+        eval sed -rn 's/.*cn=\(.*\),ou=Groups,$BRANCH/\\1/ip' groups.txt
+        sudo rm -f groups.txt
+    elif [[ "$COMMAND" == "members" ]]; then
+        if [[ -z "$GROUP" ]]; then
+            echo "The GROUP var is not set. Use the --group or --gid arg to specify which group's users you want."
+            return 1
+        fi
+        eval sudo ldapsearch -H "$HOST" -D "$BIND" -w "$PASSWORD" "memberOf=cn=$GROUP,ou=Groups,$BRANCH" "$extraArgs" > members.txt
+        eval sed -rn 's/.*uid=\(.*\),ou=People,$BRANCH/\\1/ip' members.txt
+        sudo rm -f members.txt
+    elif [[ "$COMMAND" == "unlock" ]]; then
+        if [[ -z "$USER" ]]; then
+            echo "The USER var is not set. Use the --uid or --user arg to specify the user to unlock."
+            return 1
+        fi
+        lastLogin=`echo $(date +%Y%m%d%H%M%S -u)Z`
+        cat << EOF > unlock.ldif
+dn: uid=${USER},ou=People,${BRANCH}
+changetype: modify
+delete: passwordRetryCount
+
+dn: uid=${USER},ou=People,${BRANCH}
+changetype: modify
+delete: accountUnlockTime
+
+dn: uid=${USER},ou=People,${BRANCH}
+changetype: modify
+replace: lastLoginTime
+lastLoginTime: ${lastLogin}
+
+dn: uid=${USER},ou=People,${BRANCH}
+changetype: modify
+EOF
+        if [[ "$USER" == "bindusername" ]]; then
+            cat << EOF >> unlock.ldif
+delete: passwordExpirationTime
+EOF
+        else
+            expiration=`echo $(date +%Y%m%d%H%M%S -u -d "${EXPIRATION}")Z`
+            cat << EOF >> unlock.ldif
+replace: passwordExpirationTime
+passwordExpirationTime: ${expiration}
+EOF
+        fi
+        eval sudo ldapmodify -H "$HOST" -D "$BIND" -w "$PASSWORD" -c -f unlock.ldif
+    sudo rm -f unlock.ldif
+    elif [[ "$COMMAND" == "exp" || "$COMMAND" == "expire" ]]; then
+        if [[ -z "$USER" ]]; then
+            echo "The USER var is not set. Use the --uid or --user arg to specify which user's passwordExpirationTime to change."
+            return 1
+        fi
+        cat << EOF > expire.ldif
+dn: uid=${USER},ou=People,${BRANCH}
+changetype: modify
+EOF
+        if [[ "$USER" == "bindusername" ]]; then
+            cat << EOF >> expire.ldif
+delete: passwordExpirationTime
+EOF
+        else
+            expiration=`echo $(date +%Y%m%d%H%M%S -u -d "${EXPIRATION}")Z`
+            cat << EOF >> expire.ldif
+replace: passwordExpirationTime
+passwordExpirationTime: ${expiration}
+EOF
+        fi
+        eval sudo ldapmodify -H "$HOST" -D "$BIND" -w "$PASSWORD" -c -f expire.ldif
+        sudo rm -f expire.ldif
+    elif [[ "$COMMAND" == "help" ]]; then
+        cat << EOF
+Usage: ldap COMMAND [options]
+
+Commands:
+    search          Searches through the LDAP database
+    mod[ify]        Modifies entries in the LDAP database via an LDIF file
+    add             Adds new entries to the LDAP database, also uses LDIF files
+    passw[or]d      Change a user's password. Requires either the --uid or --user option, as
+                      well as the -s or --new-password option
+    groups          Prints the list of groups a user belongs to. Requires either the
+                      --uid or --user option
+    members         Prints the list of users that are members of a group. Requires either
+                      the --group or --gid option
+    unlock          Unlocks a user's account by resetting their passwordExpirationTime,
+                      passwordRetryCount, lastLoginTime, and accountUnlockTime. Can be used
+                      with the --exp option. Requires either the --uid or --user option
+    exp[ire]        Changes the passwordExpirationTime for a user. Can be used with the
+                      --exp option. Requires either the --uid or --user option
+
+Basic Options:
+    -H,--host       connect to ldap using this protocol and hostname
+                    DEFAULT: ldaps://
+    -D,--bind       connect to ldap using this full bind
+                    DEFAULT: uid=\$BINDUSER,ou=People,\$BRANCH
+    -B,--user-bind  the ldap username to bind with. If you change this, you will also need
+                      to use the -w or --password option to specify that user's password.
+                      Sets \$BINDUSER
+                    DEFAULT: bindusername
+    -w,--password   the ldap password of the user to bind with
+                    DEFAULT: \$(sudo cat /path/to/password/file)
+    -s,             the new password to set for the user. Only needed when changing a user's
+    --new-password    password with the 'ldap passwd' command
+                    DEFAULT: nil
+    -m,--manager    use the ldapmanagerBindUser account to perform the ldap action. This replaces
+                      -D and -w with the default ldapmanagerBindUser password and bind
+                    DEFAULT: false
+    -b,--branch,    the ldap branch to use. Sets \$BRANCH
+    --base,--basedn
+                    DEFAULT: dc=something,dc=com
+    --user,--uid    the user account to use for the specified command
+                    DEFAULT: nil
+    --group,--gid   the group account to use for the specified command
+                    DEFAULT: nil
+    --exp,--expire, the time difference from now when the password should expire
+    --expiration
+                    DEFAULT: +90 days
+    --help          prints this help text then exits
+
+Advanced Options:
+    To see the advanced ldap options use the following commands (depending on which command you wish to use):
+        ldapsearch --help
+        ldapadd --help
+        ldapmodify --help
+        ldappasswd --help
+EOF
+        return
+    else
+        echo -e "Unknown ldap command '$COMMAND'\nRemember that the ldap command needs to be the first thing after 'ldap'.\nie: ldap search\n\nTo see the help text use 'ldap help' or 'ldap --help'"
+        return 1
+    fi
+}
+
+# Runs the ldap commands, but uses the manager bind
+ldapm () {
+    ldap "$1" -m "${@:2}"
+}
