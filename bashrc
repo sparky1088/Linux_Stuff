@@ -153,6 +153,9 @@ alias webserver="python /home/mwaldorf/Web/pyhtml.py"
 alias VPN="/bin/bash /home/mwaldorf/shrewVPNconnect.sh"
 alias vpnhelp="echo -e 'shrewVPNconnect.sh can be used to connect to the Cisco VPNs via CLI\nThe VPN command will run shrewVPNconnect.sh\nikec -r ConnName -u USER -p PASSWORD -a \nArk-LasVegas\nArk-Lindon\nArk-Lindonfailover\nBay-Health\nBay-Health-Vegas\nBronx\nDHIN\nHASA\nJHIE\nPOC\nor use vpnstart to launch the ShrewSoft GUI'"
 
+## Simple git help because I can never Remember the order
+alias githelp="echo -e 'git add . (add new files)\ngit commit (commit the changes made)\ngit push (push to the branch)\n-sparky loves alice'"
+
 # work on wlan0 by default #
 # Only useful for laptop as all servers are without wireless interface
 alias iwconfig='iwconfig wlan0'
