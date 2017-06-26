@@ -93,6 +93,9 @@ fi
 
 export HISTCONTROL=ignoreboth:erasedups
 # vim:ts=4:sw=4
+## sudo alias for sudo
+alias sudo='sudo '
+
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -140,7 +143,11 @@ alias tcpdump='tcpdump -i enp0s24'
 alias ethtool='ethtool enp0s25'
 
 ## remoting into windows machines
-alias remote='rdesktop'
+alias remote='rdesktop -g 1820x980'
+
+## Something for python
+alias py='python'
+alias webserver="python /home/mwaldorf/Web/pyhtml.py"
 
 ## Shrewsoft VPN Help
 alias VPN="/bin/bash /home/mwaldorf/shrewVPNconnect.sh"
