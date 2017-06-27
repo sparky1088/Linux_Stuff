@@ -196,7 +196,7 @@ alias colortest2='/bin/bash /home/mwaldorf/scripts/colortest.sh'
 alias colortest3='for x in {0..8}; do for i in {30..37}; do for a in {40..47}; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo ""'
 
 ## Adding ldap aliases
-. /home/mwaldorf/ldapfunctions
+. /home/mwaldorf/scripts/ldapfunctions
 
 extract() { 
     if [ -f $1 ] ; then 
