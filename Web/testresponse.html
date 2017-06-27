@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body background="background.jpg">
+
+
+<!--
+<iframe src="https://docs.google.com/spreadsheets/d/18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs/edit?usp=sharing">
+</iframe>
+-->
+<!-- 
+URL for editing: https://docs.google.com/spreadsheets/d/18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs/edit#gid=982758487
+key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs
+gid=982758487
+The key is whatever comes after d in the url and the gid is after gid
+NOTE: each gid is a different sheet.
+-->
+
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT B, C, D, F LABEL B 'When', C 'Location', D 'With Persons'&key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs&gid=982758487" width=420 height=230 frameBorder="0">
+Responses to Hangouts
+</iframe>
+
+<p>
+I hung out with Lacey these times.
+</p>
+<!-- Alternative that is much more difficult
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT%20B%2C%20C%2C%20D%2C%20F%20WHERE%20D%20CONTAINS%20%27Lacey%27&key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs&gid=982758487" width=400 height=200 frameBorder="0">
+-->
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT B, C, D, F WHERE D CONTAINS 'Lacey'&key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs&gid=982758487" width=450 height=230 frameBorder="0">
+Lacey hangouts
+</iframe>
+<p>
+Mark was with me these times.
+</p>
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT B, C, D, F WHERE D CONTAINS 'Mark'&key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs&gid=982758487" width=400 height=125 frameBorder="0">
+<p>
+I went to the dojo
+
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT COUNT(C) WHERE C CONTAINS 'Dojo' LABEL COUNT(C) 'Times @ Dojo'&key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs&gid=982758487" width=200 height=75 frameBorder="0">
+Dojo
+</iframe>
+</p>
+
+<p>
+Total Times gone to each place:
+</p>
+
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT C, COUNT(C) GROUP BY C LABEL C 'Place', COUNT(C) 'Times There'&key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs&gid=982758487" width=400 height=100 frameBorder="0">
+</iframe>
+
+<p>
+Total Times gone to each place in June:
+</p>
+
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT C, COUNT(C) WHERE B >= date '2017-06-01' and B <= date '2017-06-30' GROUP BY C LABEL C 'Place', COUNT(C) 'Times There'&key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs&gid=982758487" width=400 height=100 frameBorder="0">
+</iframe>
+
+<p>
+Total submitted by Me
+</p>
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT COUNT(G) WHERE G CONTAINS 'mwaldorf88@gmail.com' LABEL COUNT(G) 'Total Submits by Me'&key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs&gid=982758487" width=200 height=100 frameBorder="0">
+</iframe>
+
+
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT G, COUNT(G) GROUP BY G LABEL G 'Email Address', COUNT(G) 'Totals'&key=18HQ6rLjcre4RubfTOxUzK-G0pzHQjxWCu0zkdW2OsOs&gid=982758487" width=250 height=100 frameBorder="0">
+</iframe>
+
+</body>
+</html>

@@ -104,8 +104,8 @@ alias doMagic="pithos"
 alias df="df -H"
 alias today='cal | grep -C7 --color=auto "\<$(date +%Oe)\>"'
 alias calloop='while true;do clear; today; sleep 30m; done'
-alias rand="/bin/bash /home/mwaldorf/randomwordgen.sh"
-alias chbg="/bin/bash /home/mwaldorf/backgroundchanger.sh"
+alias rand="/bin/bash /home/mwaldorf/scripts/randomwordgen.sh"
+alias chbg="/bin/bash /home/mwaldorf/scripts/backgroundchanger.sh"
 alias changebg="chbg"
 alias vpnstart="sudo iked;qikea"
 alias reloadxdefaults="xrdb -merge $HOME/.Xresources"
@@ -150,7 +150,7 @@ alias py='python'
 alias webserver="python /home/mwaldorf/Web/pyhtml.py"
 
 ## Shrewsoft VPN Help
-alias VPN="/bin/bash /home/mwaldorf/shrewVPNconnect.sh"
+alias VPN="/bin/bash /home/mwaldorf/scripts/shrewVPNconnect.sh"
 alias vpnhelp="echo -e 'shrewVPNconnect.sh can be used to connect to the Cisco VPNs via CLI\nThe VPN command will run shrewVPNconnect.sh\nikec -r ConnName -u USER -p PASSWORD -a \nArk-LasVegas\nArk-Lindon\nArk-Lindonfailover\nBay-Health\nBay-Health-Vegas\nBronx\nDHIN\nHASA\nJHIE\nPOC\nor use vpnstart to launch the ShrewSoft GUI'"
 
 ## Simple git help because I can never Remember the order
@@ -192,7 +192,7 @@ alias games='jobs'
 ## Color tests
 alias colortest1='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)
 '
-alias colortest2='/bin/bash /home/mwaldorf/colortest.sh'
+alias colortest2='/bin/bash /home/mwaldorf/scripts/colortest.sh'
 alias colortest3='for x in {0..8}; do for i in {30..37}; do for a in {40..47}; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo ""'
 
 ## Adding ldap aliases
