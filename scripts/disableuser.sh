@@ -1,12 +1,26 @@
 #!/bin/bash
 
 ## script to disable an ssh user.
+## Errors will be thrown if it is not a valid username
 
-echo "Changing shell to /sbin/nologin"
-usermod -s /sbin/nologin $1
-echo "Locking account"
-passwd $1 -l
-echo "Expiring account"
-usermod --expiredate 1 $1
-echo "Moving key files"
-mv /home/$1/.ssh /home/$1/.ssh_bak
+echo "Enter a valid username"
+read USERNAME
+
+id -u $USERNAME
+
+if [ $? -eq 0 ]; then
+    echo "Specified user exists"
+    echo "Changing shell to /sbin/nologin"
+    usermod -s /sbin/nologin $USERNAME
+    echo "Locking account"
+    passwd $USERNAME -l
+    echo "Expiring account"
+    usermod --expiredate 1 $USERNAME
+    echo "Moving key files"
+    mv /home/$USERNAME/.ssh /home/$USERNAME/.ssh_bak
+
+else
+    echo "User not Found"
+fi
+
+exit
