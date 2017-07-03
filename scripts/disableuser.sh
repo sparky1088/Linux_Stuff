@@ -3,7 +3,9 @@
 ## script to disable an ssh user.
 ## Errors will be thrown if it is not a valid username
 
-echo "Enter a valid username"
+echo 'Script must be run as sudo'
+
+echo "Enter a valid username:"
 read USERNAME
 
 id -u $USERNAME
@@ -20,7 +22,7 @@ if [ $? -eq 0 ]; then
     mv /home/$USERNAME/.ssh /home/$USERNAME/.ssh_bak
 
 else
-    echo "User not Found"
+    echo "User not Found, check /etc/passwd for specified user."
 fi
 
 exit
