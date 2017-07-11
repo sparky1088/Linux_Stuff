@@ -219,3 +219,4 @@ extract() {
      fi 
 }
 
+function cdn(){ for i in `seq $1`; do cd ..; done;}
