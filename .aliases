@@ -1,6 +1,7 @@
 ## sudo alias for sudo
 alias sudo='sudo '
 
+## Generic
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -21,31 +22,43 @@ alias ping="ping -c 5"
 alias bashreload="source ~/.bashrc"
 alias reloadbash="bashreload"
 alias freem="free -hm"
+alias du1="du -h --max-depth=1"
+alias duTotal="du -csh * | grep total"
+
 #install colordiff package
 alias diff="colordiff"
 alias ports="sudo netstat -tuplan"
+
 # do not delete / or prompt if deleting more than 3 files at a time #
 alias rm='rm -I --preserve-root'
+
 # confirmation #
 alias mv='mv -i'
 alias cp='cp -ai'
 alias ln='ln -i'
+
 # Parenting changing perms on / #
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
-#change according to system
+
+## Change according to system
 alias update='sudo dnf update'
 #alias update='yum update'
 #alias updatey='yum -y update'
 ## All of our servers enp0s25 is connected to the Internets via vlan / router etc  ##
-#download packages for vnstat,iftop,tcpdump,ethtool
+
+## Download packages for vnstat,iftop,tcpdump,ethtool
 alias dnstop='dnstop -l 5  enp0s25'
 alias vnstat='vnstat -i enp0s25'
-# interface traffic
+
+## Interface traffic
 alias iftop='iftop -i enp0s25'
 alias tcpdump='tcpdump -i enp0s24'
 alias ethtool='ethtool enp0s25'
+
+## External IP
+alias myip="curl icanhazip.com"
 
 ## remoting into windows machines
 alias remote='rdesktop -g 1820x980'
@@ -53,6 +66,7 @@ alias remote='rdesktop -g 1820x980'
 ## Something for python
 alias py='python'
 alias webserver="python /home/mwaldorf/Web/pyhtml.py"
+alias web8080="python -m SimpleHTTPServer 8080"
 
 ## Shrewsoft VPN Help
 alias VPN="/bin/bash /home/mwaldorf/scripts/shrewVPNconnect.sh"
@@ -99,3 +113,11 @@ alias colortest1='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo 
 '
 alias colortest2='/bin/bash /home/mwaldorf/scripts/colortest.sh'
 alias colortest3='for x in {0..8}; do for i in {30..37}; do for a in {40..47}; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo ""'
+
+## Some History Commands
+alias hist10="awk '{print $1}' ~/.bash_history | sort | uniq -c | sort -rn | head -n 10"
+
+## Useless but fun
+alias busy="cat /dev/urandom | hexdump -C | grep --color=never 'ca fe'" 
+
+

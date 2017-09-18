@@ -37,7 +37,7 @@ UPTIME=`printf "%d days, %02dh%02dm%02ds" "$days" "$hours" "$mins" "$secs"`
 # get the load averages
 read one five fifteen rest < /proc/loadavg
 
-echo "`head -7 ~/.wttr.in | tail -5` $(tput setaf 2)
+echo "`curl -s -N wttr.in | head -7`$(tput setaf 2)
    .~~.   .~~.    `date +"%A, %e %B %Y, %r"`
   '. \ ' ' / .'   `uname -srmo`$(tput setaf 1)
    .~ .~~~..~.    

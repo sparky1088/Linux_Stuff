@@ -10,7 +10,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-PS1="\[\033[38;5;34m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;27m\]\h\[$(tput sgr0)\] "
+PS1="\[\033[38;5;34m\]\u\[\033[0:36;15m\]@\[\033[38;5;27m\]\h $(tput setaf 3)\w\[$(tput sgr0)\] "
+#PS1="$(tput setaf 2)\u\[$(tput setaf 6)\]@\$(tput setaf 4)\h $(tput setaf 3)\w\[$(tput sgr0)\] "
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -30,4 +31,6 @@ export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
 # if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
+
+export PAGER="most"
 
