@@ -10,7 +10,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-PS1="\[\033[38;5;34m\]\u\[\033[0:36;15m\]@\[\033[38;5;27m\]\h \$(tput setaf 3)\w\[\$(tput sgr0)\] "
+PS1="\[\033[38;5;34m\]\u\[\033[0:36;15m\]@\[\033[38;5;27m\]\h \[\033[01;33m\]\w\\[\033[01;00m\] "
 #PS1="$(tput setaf 2)\u\[$(tput setaf 6)\]@\$(tput setaf 4)\h \$(tput setaf 3)\w\[\$(tput sgr0)\] "
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
