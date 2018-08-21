@@ -65,7 +65,7 @@ alias remote='rdesktop -g 1820x980'
 
 ## Something for python
 alias py='python'
-alias webserver="python /home/mwaldorf/Web/pyhtml.py"
+alias webserver="python /home/mwaldorf/scripts/pyhtml.py"
 alias web8080="python -m SimpleHTTPServer 8080"
 
 ## Shrewsoft VPN Help
