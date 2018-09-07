@@ -12,6 +12,9 @@ The color test scripts are in order to check wheter the terminal is using 256 co
 
 The tmux config is my general layout so that I can have the things I use most often. The only one to change would be the VPN but it is mostly for work.
 
+## Note .config
+The items in .config are for a for redhat based systems it seems.
+
 ## Other Stuff
 
 This was mostly intended to be a back up of config files. I have found it neccessary to also start adding some scripts and so once I remove any unwanted info from them I will be backing those up as well.
