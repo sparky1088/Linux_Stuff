@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+</head>
+<body background="background.jpg">
+
+
+<!--
+<iframe src="https://docs.google.com/spreadsheets/d/1uMjdbTH3Mi18YBBhUtZ_Je-vyYpUCq9jFqc4hZ3RBGQ/edit#gid=0">
+</iframe>
+-->
+<!-- 
+URL for editing: https://docs.google.com/spreadsheets/d/18ySr0TaK-uMQ8Tz3KOch1Isth80wszhflBocqqLsxT8/edit#gid=1784920592
+key=18ySr0TaK-uMQ8Tz3KOch1Isth80wszhflBocqqLsxT8
+gid=0
+The key is whatever comes after d in the url and the gid is after gid
+NOTE: each gid is a different sheet.
+-->
+<h3>Dashboard querying against google sheet</h3>
+<div class="row">
+  <div class="column">
+    <h4>Need Updates</h4>
+      <p>These servers have pending updates available that need to be installed either through apt or some other gui service like word press.
+      </p>
+      <p>
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT A, B WHERE D >0 ORDER BY A&key=18ySr0TaK-uMQ8Tz3KOch1Isth80wszhflBocqqLsxT8&gid=0" width=250 height=800 frameborder="0" scrolling="no" onload="resizeIframe(this)">
+</iframe>
+      </p>
+  </div>
+<!-- Object Test--><!--
+<object data="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT A, B WHERE D>0&key=18ySr0TaK-uMQ8Tz3KOch1Isth80wszhflBocqqLsxT8&gid=0">
+</object>-->
+<!-- Embed test --><!--
+<embed height=auto width=auto type='text/html' src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT A, B WHERE D>0&key=18ySr0TaK-uMQ8Tz3KOch1Isth80wszhflBocqqLsxT8&gid=0">
+</embed>-->
+  <div class="column">
+    <h4>Need To Check</h4>
+      <p> These serverse have not been checked for updates in over 30 days.
+      </p>
+      <p>
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT E,F WHERE E IS NOT NULL ORDER BY E&key=18ySr0TaK-uMQ8Tz3KOch1Isth80wszhflBocqqLsxT8&gid=1784920592" width=250 height=800 frameborder="0" scrolling="no" onload="resizeIframe(this)">
+</iframe>
+      </p>
+  </div>
+
+  
+  <div class="column">
+    <h4>Older Hardware</h4>
+      <p> This list is the list of servers that are over 3 years old as of today.
+      </p>
+      <p>
+<iframe src="https://spreadsheets.google.com/tq?tqx=out:html&tq=SELECT H,I,J WHERE H IS NOT NULL ORDER BY H&key=18ySr0TaK-uMQ8Tz3KOch1Isth80wszhflBocqqLsxT8&gid=1784920592" width=350 height=800 frameborder="0" scrolling="no" onload="resizeIframe(this)">
+</iframe>
+      </p>
+  </div>
+
+
+</body>
+</html>
