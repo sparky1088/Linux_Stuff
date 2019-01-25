@@ -1,0 +1,12 @@
+#!/bin/bash 
+## find print files in path based on timestamp 
+## regex excludes hidden files, turning find ito an array is hard
+## remove regex to include those 
+## find $dirname -maxdepth 6 -type f -print0 | xargs -0r ls -lt | sendmail $mailto
+## decided to just go with pipes for now as I couldnt get the array to work
+## sendmail to users
+
+dirname="/path/to/find/"
+mailto=emailaddrass@domain.com
+
+find $dirname -maxdepth 6 \( ! -regex '.*/\..*' \) -type f -print0 | xargs -0r ls -lt | sendmail $mailto
