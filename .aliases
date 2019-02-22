@@ -52,6 +52,9 @@ alias update='sudo dnf update'
 alias dnstop='dnstop -l 5  enp0s25'
 alias vnstat='vnstat -i enp0s25'
 
+## Wifi
+alias wifiap="nmcli device wifi list"
+
 ## Interface traffic
 alias iftop='iftop -i enp0s25'
 alias tcpdump='tcpdump -i enp0s24'
