@@ -7,7 +7,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias ssh="TERM=linux ssh"
 alias doMagic="pithos"
-alias df="df -H"
+#alias df="df -H"
+#requires package pydf
+alias df="pydf -h"
 alias today='cal | grep -C7 --color=auto "\<$(date +%Oe)\>"'
 alias calloop='while true;do clear; today; sleep 30m; done'
 alias rand="/bin/bash /home/mwaldorf/scripts/randomwordgen.sh"
