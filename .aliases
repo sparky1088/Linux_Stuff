@@ -24,6 +24,7 @@ alias reloadbash="bashreload"
 alias freem="free -hm"
 alias du1="du -h --max-depth=1"
 alias duTotal="du -csh * | grep total"
+alias tailf="tail -f"
 alias mkdir='mkdir -pv'
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias ff='find . -type f -iname'
