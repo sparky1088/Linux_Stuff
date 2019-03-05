@@ -34,3 +34,7 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file s
 
 export PAGER="most"
 
+# used to make hostnames not require .ccb
+export HOSTALIASES=~/.hosts
+# ubuntu fix for sudo graphical interfaces
+gks () { xhost +si:localuser:root; sudo -H "$@"; xhost -si:localuser:root; }
