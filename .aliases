@@ -29,6 +29,8 @@ alias duTotal="du -csh * | grep total"
 alias tailf="tail -f"
 alias mkdir='mkdir -pv'
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
+## Show files with no comment
+alias nocomment='grep -Ev '''^(#|$)''''
 
 ## XTerm Fixes
 alias xtermfix="xrdb ~/.X*"
