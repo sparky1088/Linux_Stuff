@@ -103,6 +103,7 @@ alias rdp='xfreerdp -u $1'
 alias py='python'
 alias webserver="python /home/mwaldorf/scripts/pyhtml.py"
 alias web8080="python -m SimpleHTTPServer 8080"
+alias pyweb="python -m SimpleHTTPServer $1"
 
 ## Simple git help because I can never Remember the order
 alias githelp="echo -e 'git add . (add new files)\ngit commit (commit the changes made)\ngit push (push to the branch)\n-sparky loves alice'"
