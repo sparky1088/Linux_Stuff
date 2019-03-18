@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 UBOOQUITY_PORT=2202
-ADMIN_PORT=2233
+ADMIN_PORT=2203
 # Uncomment the following line to allocate more memory to Ubooquity
 # MEM_OPT=-Xmx512m
 
