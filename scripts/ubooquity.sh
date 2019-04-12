@@ -11,7 +11,7 @@ case "$1" in
         start)
 			if [ -z "$count" ];
 				then
-				    nohup java -Djava.awt.headless=true $MEM_OPT -jar Ubooquity.jar --libraryport $UBOOQUITY_PORT --headless --adminport $ADMIN_PORT --remoteadmin </dev/null &>/srv/ubooquity/logs/ubooquity.log &
+				    nohup java $MEM_OPT -jar Ubooquity.jar --libraryport $UBOOQUITY_PORT --headless --adminport $ADMIN_PORT --remoteadmin </dev/null &>/srv/ubooquity/logs/ubooquity.log &
 					echo Ubooquity has been started;
 				else
 					echo Ubooquity is already running;
