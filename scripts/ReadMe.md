@@ -1,3 +1,3 @@
-# HTML files (mostly)
+# Scripts
 
-These are some html, css or js files I either wrote or edited to suit my needs better than the original had.
+These are some html, css or js and bash files I either wrote or edited to suit my needs better than the original had.
