@@ -30,7 +30,7 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 
 * [linuxdate.sh](linuxdate.sh) - How many days since Jan 1, 1970
 
-* [localbkup.sh](localbkup.sh) - 
+* [localbkup.sh](localbkup.sh) - Locally back up a directory
 
 * [lsix](lsix) - This only works for certain terminals (I know xterm works) - this allows for images to be displayed in the command line. I believe I made an alias as well as I had to do something to make it work
 
@@ -38,7 +38,7 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 
 * [ping24net.sh](ping24net) - ping all devices in a /24 subnet
 
-* [pingtest.sh](pingtest.sh) - 
+* [pingtest.sh](pingtest.sh) - ping test if fails writes to file
 
 * [pyhtml.py](pyhtml.py) - simple python script for a quick and dirty web server
 
