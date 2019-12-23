@@ -46,7 +46,7 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 
 * [randomwordgen.sh](randomwordgen.sh) - Generate a random word based on the linux dictionary.
 
-* [remotebk.sh](remotebk.sh) - 
+* [remotebk.sh](remotebk.sh) - Remote tar and backup a directory
 
 * [sendfilelist](sendfilelist) - sends a list of files in a specific folder
 
