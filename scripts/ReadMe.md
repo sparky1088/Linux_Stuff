@@ -2,8 +2,6 @@
 
 These are some html, css or js and bash files I either wrote or edited to suit my needs better than the original had.
 
-* [ConnectvsDisconnects.py](ConnectvsDisconnects.py) - This is a simple python scripts that shows the number of connections and disconnections for Cisco ASA devices.
-
 * [backgroundchanger.sh](backgroundchanger.sh) - This was written as I couldnt get gnome or kde to properly change my background as I had too many files in the folder I was using (somewhere near 3000 images) and I wanted to randomize it regularly
 
 * [backupCisco.sh](backupCisco.sh) - This script was made to do a quick dump of Cisco config on an ASA
@@ -13,6 +11,8 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 * [checklan](checklan) - Had issues where sometimes a CentOS machine would loose network connectivity if it wasnt actively used, not sure the cause but restarting the network fixed it.
 
 * [colortest.sh](colortest.sh) - Another simple color testing script
+
+* [connectVsDisconnects.py](vonnectVsDisconnects.py) - This is a simple python scripts that shows the number of connections and disconnections for Cisco ASA devices.
 
 * [conf&mysqlBkup.sh](conf&mysqlBkup.sh) - Script to back up config files and mysql databases
 
