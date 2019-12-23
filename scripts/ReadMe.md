@@ -24,7 +24,7 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 
 * [forward.sh](forward.sh) - script to forward parts, originaly made to share a vpn (as it was only allowed 2 users) so more users could access the servers on the other side of the network but I have found it works nice for lxc (linux containers) to forward for websservices.
 
-* [ip_check](ip_check) - 
+* [ip_check_logging](ip_check_logging) - simple check and log of an ip address
 
 * [ldapfunctions](ldapfunctions) - functions for some simple ldap commands, a co-worker wrote them and I removed all of the important bits from it but its nice for reference
 
