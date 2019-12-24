@@ -44,7 +44,9 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 
 * [pyhtmlredirect.py](pyhtmlredirect.py) - 
 
-* [randomwordgen.sh](randomwordgen.sh) - Generate a random word based on the linux dictionary.
+* [randomSentence.py](randomSentence.py) - Generates an aweful random sentence
+
+* [randomWordgen.sh](randomWordgen.sh) - Generate a random word based on the linux dictionary.
 
 * [remotebk.sh](remotebk.sh) - Remote tar and backup a directory
 
