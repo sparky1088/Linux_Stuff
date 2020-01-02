@@ -11,7 +11,7 @@ ASA# more system:running-config | b tunnel-group [peer IP add]
 ASA# sh vpn-sessiondb detail l2l | b [peer IP add]
 ASA# show vpn-sessiondb detail l2l filter name <peer_address>
 
-
+### Reset IPSec VPN
 ASA# clear ipsec sa peer <remote-peer-IP>
 
 ### Add remote access (VPN) user
