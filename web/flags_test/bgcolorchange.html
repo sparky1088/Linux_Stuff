@@ -1,0 +1,26 @@
+<html>
+<style>
+#box {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+</style>
+<body style="background-color: rgb(40, 44, 52); color: #ddd">
+
+<p>Click the button to change the background color of the document.</p>
+
+<button onclick="randChangeBgColor('box')">Try it</button>
+
+<div id="box" style=""> box? </div>
+
+<script>
+function randChangeBgColor(id) {
+  var randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.getElementById(id).style.backgroundColor = '#' + randomColor;
+}
+</script>
+
+</body>
+</html>

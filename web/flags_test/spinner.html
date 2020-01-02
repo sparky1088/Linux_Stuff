@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="spinner.css" charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="spinner.js"></script>
+
+</head>
+<body>
+<div id="main">
+
+	<div id="left-column">
+		<form class="iform" action="#" method="get">
+			<label for="joiner"></label>
+			<input id="joiner" name="joiner" class="joiner" placeholder="Please Enter your name" />
+			<select id="colorer" name="colorer" class="colorer">
+				<option value="">auto</option>
+				<option value="db0000">Red</option>
+				<option value="171515">Black</option>
+				<option value="008c0a">Green</option>
+			</select>
+			<button class="add">Add</button>
+			<button class="delete">Delete</button>
+			<button class="spin-trigger">Spin</button>
+			<button class="clear">Clear</button>
+			<button class="reset">Reset</button>
+		</form>
+		<canvas class="canvas" width="500" height="500"></canvas>
+	</div>
+
+	<div id="right-column">
+		<p class="winner">The Winner is ... <span>&nbsp;</span></p>
+	</div>
+
+	<div style="clear:both"></div>
+
+</div>
+</body>
+</html>
