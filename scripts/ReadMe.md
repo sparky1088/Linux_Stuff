@@ -50,6 +50,8 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 
 * [remotebk.sh](remotebk.sh) - Remote tar and backup a directory
 
+* [removeTranslatorPage.sh](removeTranslatorPage.sh) - Use for manga downloader to remove translater pages that get added
+
 * [sendfilelist](sendfilelist) - sends a list of files in a specific folder
 
 * [shrewVPNconnect.sh](shrewVPNconnect.sh) - Uses the shrewsoft linux software to connect to the VPN on ASA's via the CLI
