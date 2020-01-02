@@ -12,6 +12,8 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 
 * [colortest.sh](colortest.sh) - Another simple color testing script
 
+* [comicmove.sh](comicmove.sh) - Simple moving script for ubooquity container
+
 * [connectVsDisconnects.py](vonnectVsDisconnects.py) - This is a simple python scripts that shows the number of connections and disconnections for Cisco ASA devices.
 
 * [conf&mysqlBkup.sh](conf&mysqlBkup.sh) - Script to back up config files and mysql databases
