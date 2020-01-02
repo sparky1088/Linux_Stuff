@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel=stylesheet href="styles.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script>
+     var time = new Date().getTime();
+     $(document.body).bind("mousemove keypress", function(e) {
+         time = new Date().getTime();
+     });
+
+     function refresh() {
+         if(new Date().getTime() - time >= 60000) 
+             window.location.reload(true);
+         else 
+             setTimeout(refresh, 10000);
+     }
+
+     setTimeout(refresh, 30);
+</script>
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+</style>
+</head>
+<body class=greypaper>
+	<body class=greypaper>
+
+		<!--Navigation bar-->
+		<div class=sticky id="nav-placeholder">
+
+		</div>
+
+		<script>
+$(function(){
+	  $("#nav-placeholder").load("nav.html");
+});
+		</script>
+		<!--end of Navigation bar-->
+
+		<div class=paper style="width:85%">
+
+
+<h3>Poisons Table</h3>
+<div class="container-poison layer green">
+<iframe class="iframe-poison layer green" src="https://spreadsheets.google.com/tq?tqx=out:html&key=1XD9A6np4N_24JVnLn4jb2dZ2RGH8gCs9aP7oTezxyPA&gid=0" frameborder="0" scrolling="no" onload="resizeIframe(this)" >
+</iframe>
+  </div>
+		</div>
+
+</body>
+</html>
