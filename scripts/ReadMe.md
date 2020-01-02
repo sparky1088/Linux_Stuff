@@ -16,6 +16,10 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 
 * [conf&mysqlBkup.sh](conf&mysqlBkup.sh) - Script to back up config files and mysql databases
 
+* [createLxcDebian.sh](createLxcDebian.sh) - Download an unprivileged LXC container (Debian based)
+
+* [createLxcDebianPrivileged.sh](createLxcDebianPrivileged.sh) - Creates privileged containers (debian) in LXC
+
 * [disableuser.sh](disableuser.sh) - Simple script to disable linux users
 
 * [downloadsite.sh](downloadsite.sh) - script that will download an entire html site
@@ -33,6 +37,12 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 * [localbkup.sh](localbkup.sh) - Locally back up a directory
 
 * [lsix](lsix) - This only works for certain terminals (I know xterm works) - this allows for images to be displayed in the command line. I believe I made an alias as well as I had to do something to make it work
+
+* [lxc.sh](lxc.sh) - Work in progress script to install my commonly used containers
+
+* [lxcWebForward.sh](lxcWebForward.sh) - Script to foward ports to an lxc container
+
+* [lxd-forward](lxd-forward) - Someone's container port forwarding script
 
 * [mkscript.sh](mkscript.sh) - a script designed to start making a script with documentation, not sure if it is working
 
