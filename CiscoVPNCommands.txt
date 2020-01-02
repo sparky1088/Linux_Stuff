@@ -10,3 +10,6 @@ ASA# more system:running-config | b tunnel-group [peer IP add]
 Display Uptime, etc.
 ASA# sh vpn-sessiondb detail l2l | b [peer IP add]
 ASA# show vpn-sessiondb detail l2l filter name <peer_address>
+
+
+ASA# clear ipsec sa peer <remote-peer-IP>
