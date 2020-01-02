@@ -6,7 +6,7 @@
 
 #ls $HOME/Downloads/manga_downloader-master/src/$1
 
-cp -a $HOME/Downloads/manga_downloader-master/src/$1 $HOME/.local/share/lxc/ubooquity/rootfs/srv/ubooquity/Comics/
+cp -a $HOME/git/manga_downloader-master/src/$1 $HOME/.local/share/lxc/ubooquity/rootfs/srv/ubooquity/Comics/
 
 ## This fixes the lxc permissions
 chown -R 100000:100000 $HOME/.local/share/lxc/ubooquity/rootfs/srv/ubooquity/
