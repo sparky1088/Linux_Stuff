@@ -1,26 +1,32 @@
-## Sudo alias for sudo
+## sudo alias for sudo
 alias sudo='sudo '
 
 ## Generic
+alias ll='ls -l'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias ssh="TERM=linux ssh"
 alias doMagic="pithos"
 #alias df="df -H"
-#requires package pydf
-alias df="pydf -h"
+# must install pydf for below
+alias df='pydf -h'
 alias today='cal | grep -C7 --color=auto "\<$(date +%Oe)\>"'
 alias calloop='while true;do clear; today; sleep 30m; done'
-alias rand="/bin/bash /home/mwaldorf/scripts/randomwordgen.sh"
-alias chbg="/bin/bash /home/mwaldorf/scripts/backgroundchanger.sh"
+alias rand="/bin/bash $HOME/scripts/randomwordgen.sh"
+alias chbg="/bin/bash $HOME/scripts/backgroundchanger.sh"
 alias changebg="chbg"
+alias vpnstart="sudo iked;qikea"
+alias reloadxdefaults="xrdb -merge $HOME/.Xresources"
 alias update="sudo dnf update"
 alias updatey="sudo dnf -y update"
 alias hist="history"
 alias p="ping -c 5"
 alias ping="ping -c 5"
 alias tping="time ping -c 5"
+alias trace="traceroute"
+alias tracert="traceroute"
+alias pping="$HOME/prettyping -c 5"
 alias bashreload="source ~/.bashrc"
 alias reloadbash="bashreload"
 alias freem="free -hm"
@@ -32,28 +38,22 @@ alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 ## Show files with no comment
 alias nocomment="grep -Ev '''^(#|$)'''"
 
-## XTerm Fixes
-alias xtermfix="xrdb ~/.X*"
-alias reloadxdefaults="xrdb -merge $HOME/.Xresources"
-
-## Launch xterm for pictures
-alias pictures="xterm -bg black -fg grey -ti vt340"
-
-## Pictures in xterm
-alias lsix="/home/mwaldorf/scripts/lsix"
-
-## Finding files
+## finding files
 alias ff='find . -type f -iname'
 alias fhere="find . -name "
 
-# Install colordiff package
+## if ifup and down aren't working use ifconfig
+## ifconfig interface down && ifconfig interface up
+alias ifconfig='/sbin/ifconfig'
+
+#install colordiff package
 alias diff="colordiff"
 alias ports="sudo netstat -tuplan"
 
-# Do not delete / or prompt if deleting more than 3 files at a time #
+# do not delete / or prompt if deleting more than 3 files at a time #
 alias rm='rm -I --preserve-root'
 
-# Confirmation #
+# confirmation #
 alias mv='mv -i'
 alias cp='cp -ai'
 alias ln='ln -i'
@@ -69,16 +69,7 @@ alias update='sudo dnf update'
 #alias updatey='yum -y update'
 ## All of our servers enp0s25 is connected to the Internets via vlan / router etc  ##
 
-## NETWORKING ##
-
-## Shresoft VPN##
-alias vpnstart="sudo iked;qikea"
-## Shrewsoft VPN Help
-alias VPN="/bin/bash /home/mwaldorf/scripts/shrewVPNconnect.sh"
-alias vpnhelp="echo -e 'shrewVPNconnect.sh can be used to connect to the Cisco VPNs via CLI\nThe VPN command will run shrewVPNconnect.sh\nikec -r ConnName -u USER -p PASSWORD -a \nArk-LasVegas\nArk-Lindon\nArk-Lindonfailover\nBay-Health\nBay-Health-Vegas\nBronx\nDHIN\nHASA\nJHIE\nPOC\nor use vpnstart to launch the ShrewSoft GUI'"
-
 ## Download packages for vnstat,iftop,tcpdump,ethtool
-## May want to edit these so they work for all interfaces
 alias dnstop='dnstop -l 5 enp0s25'
 alias vnstat='vnstat -i enp0s25'
 
@@ -88,31 +79,35 @@ alias wifiap="nmcli device wifi list"
 ## Interface traffic
 alias iftop='iftop -i enp0s25'
 alias tcpdump='tcpdump -i enp0s24'
-alias ethtool='ethtool enp0s25'
+alias ethtool='/sbin/ethtool'
+alias ethtool1='ethtool enp0s25'
 
 ## External IP
 alias myip="curl icanhazip.com"
 
-## Remoting into windows machines
+## remoting into windows machines
 alias remote='rdesktop -g 1820x980'
-## Xfreerdp as rdesktop get cert errors
-## you can change so its using the username once its downloaded.
-alias rdp='xfreerdp -u $1'
+## xfreerdp as rdesktop get cert errors
+alias rdp='xfreerdp -u michael.waldorf'
 
 ## Something for python
 alias py='python'
-alias webserver="python /home/mwaldorf/scripts/pyhtml.py"
+alias webserver="python $HOME/scripts/pyhtml.py"
 alias web8080="python -m SimpleHTTPServer 8080"
 alias pyweb="python -m SimpleHTTPServer $1"
+
+## Shrewsoft VPN Help
+alias VPN="/bin/bash $HOME/scripts/shrewVPNconnect.sh"
+alias vpnhelp="echo -e 'shrewVPNconnect.sh can be used to connect to the Cisco VPNs via CLI\nThe VPN command will run shrewVPNconnect.sh\nikec -r ConnName -u USER -p PASSWORD -a \nArk-LasVegas\nArk-Lindon\nArk-Lindonfailover\nBay-Health\nBay-Health-Vegas\nBronx\nDHIN\nHASA\nJHIE\nPOC\nor use vpnstart to launch the ShrewSoft GUI'"
 
 ## Simple git help because I can never Remember the order
 alias githelp="echo -e 'git add . (add new files)\ngit commit (commit the changes made)\ngit push (push to the branch)\n-sparky loves alice'"
 
-# Work on wlan0 by default #
+# work on wlan0 by default #
 # Only useful for laptop as all servers are without wireless interface
 alias iwconfig='iwconfig wlan0'
 
-# Some memory info
+# some memory info
 alias vmstat='vmstat -w 5'
 alias meminfo='free -m -h -l -t'
  
@@ -120,15 +115,18 @@ alias meminfo='free -m -h -l -t'
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
  
-## Get top process eating cpu ##
+## get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
  
 ## Get server cpu info ##
 alias cpuinfo='lscpu'
 
+## Linux Containers (lxc)
+alias lxcDebian="/bin/bash $HOME/scripts/createLxcDebian.sh"
+
 ## Start Virtual Windows Machine
-alias startvm='VBoxManage startvm Kumonga'
+alias startvm='VBoxManage startvm Kumonga --type headless'
 
 ## Weather
 alias W='curl -s -N wttr.in | head -7'
@@ -143,7 +141,7 @@ alias games='jobs'
 
 ## Color tests
 alias colortest1='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)'
-alias colortest2='/bin/bash /home/mwaldorf/scripts/colortest.sh'
+alias colortest2='/bin/bash $HOME/scripts/colortest.sh'
 alias colortest3='for x in {0..8}; do for i in {30..37}; do for a in {40..47}; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo ""'
 
 ## Some History Commands
@@ -157,10 +155,10 @@ alias xtermfix="xrdb ~/.X*"
 ## Launch xterm for pictures
 alias pictures="xterm -bg black -fg grey -ti vt340"
 ## Pictures in xterm
-alias lsix="/home/mwaldorf/scripts/lsix"
+alias lsix="$HOME/scripts/lsix"
 
 ## Blade software IPMIview
-alias bladectl='/home/mwaldorf/IPMIView_2.14.0_build.180213_bundleJRE_Linux_x64/IPMIView20'
+alias bladectl='$HOME/programs/IPMIView_2.14.0_build.180213_bundleJRE_Linux_x64/IPMIView20'
 
 ## Bakkin zshow alias
 alias zshow='zfs list -o name,used,refer,creation -t snapshot -r'
