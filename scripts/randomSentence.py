@@ -1,3 +1,4 @@
+#! /usr/bin/python
 #Small script to make a random sentance based on a few text files.
 import random
 

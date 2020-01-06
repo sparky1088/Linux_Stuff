@@ -27,7 +27,12 @@ do
 done
 cd "$cmd"
 }
+randpw(){ < /dev/urandom tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~' | head -c 20  ; echo;}
 
 function ipreload(){
 sudo /sbin/ifconfig $1 down && sudo /sbin/ifconfig $1 up
+}
+
+function cd_up() {
+  cd $(printf "%0.s../" $(seq 1 $1 ));
 }

@@ -2,55 +2,55 @@
 
 These are some html, css or js and bash files I either wrote or edited to suit my needs better than the original had.
 
-* [backgroundchanger.sh](backgroundchanger.sh) - This was written as I couldnt get gnome or kde to properly change my background as I had too many files in the folder I was using (somewhere near 3000 images) and I wanted to randomize it regularly
+* [backgroundchanger](backgroundchanger) - This was written as I couldnt get gnome or kde to properly change my background as I had too many files in the folder I was using (somewhere near 3000 images) and I wanted to randomize it regularly
 
-* [backupCisco.sh](backupCisco.sh) - This script was made to do a quick dump of Cisco config on an ASA
+* [backupCisco](backupCisco) - This script was made to do a quick dump of Cisco config on an ASA
 
-* [bashcolors.sh](bashcolors.sh) - Simple color testing script
+* [bashcolors](bashcolors) - Simple color testing script
 
 * [checklan](checklan) - Had issues where sometimes a CentOS machine would loose network connectivity if it wasnt actively used, not sure the cause but restarting the network fixed it.
 
-* [colortest.sh](colortest.sh) - Another simple color testing script
+* [colortest](colortest) - Another simple color testing script
 
-* [comicmove.sh](comicmove.sh) - Simple moving script for ubooquity container
+* [comicmove](comicmove) - Simple moving script for ubooquity container
 
 * [connectVsDisconnects.py](vonnectVsDisconnects.py) - This is a simple python scripts that shows the number of connections and disconnections for Cisco ASA devices.
 
-* [conf&mysqlBkup.sh](conf&mysqlBkup.sh) - Script to back up config files and mysql databases
+* [conf&mysqlBkup](conf&mysqlBkup) - Script to back up config files and mysql databases
 
-* [createLxcDebian.sh](createLxcDebian.sh) - Download an unprivileged LXC container (Debian based)
+* [createLxcDebian](createLxcDebian) - Download an unprivileged LXC container (Debian based)
 
-* [createLxcDebianPrivileged.sh](createLxcDebianPrivileged.sh) - Creates privileged containers (debian) in LXC
+* [createLxcDebianPrivileged](createLxcDebianPrivileged) - Creates privileged containers (debian) in LXC
 
-* [disableuser.sh](disableuser.sh) - Simple script to disable linux users
+* [disableuser](disableuser) - Simple script to disable linux users
 
-* [downloadsite.sh](downloadsite.sh) - script that will download an entire html site
+* [downloadsite](downloadsite) - script that will download an entire html site
 
-* [epocconv.sh](epocconv.sh) - script to see the date from the epoc date
+* [epocconv](epocconv) - script to see the date from the epoc date
 
-* [forward.sh](forward.sh) - script to forward parts, originaly made to share a vpn (as it was only allowed 2 users) so more users could access the servers on the other side of the network but I have found it works nice for lxc (linux containers) to forward for websservices.
+* [forward](forward) - script to forward parts, originaly made to share a vpn (as it was only allowed 2 users) so more users could access the servers on the other side of the network but I have found it works nice for lxc (linux containers) to forward for websservices.
 
 * [ip_check_logging](ip_check_logging) - simple check and log of an ip address
 
 * [ldapfunctions](ldapfunctions) - functions for some simple ldap commands, a co-worker wrote them and I removed all of the important bits from it but its nice for reference
 
-* [linuxdate.sh](linuxdate.sh) - How many days since Jan 1, 1970
+* [linuxdate](linuxdate) - How many days since Jan 1, 1970
 
-* [localbkup.sh](localbkup.sh) - Locally back up a directory
+* [localbkup](localbkup) - Locally back up a directory
 
 * [lsix](lsix) - This only works for certain terminals (I know xterm works) - this allows for images to be displayed in the command line. I believe I made an alias as well as I had to do something to make it work
 
-* [lxc.sh](lxc.sh) - Work in progress script to install my commonly used containers
+* [lxc](lxc) - Work in progress script to install my commonly used containers
 
-* [lxcWebForward.sh](lxcWebForward.sh) - Script to foward ports to an lxc container
+* [lxcWebForward](lxcWebForward) - Script to foward ports to an lxc container
 
 * [lxd-forward](lxd-forward) - Someone's container port forwarding script
 
-* [mkscript.sh](mkscript.sh) - a script designed to start making a script with documentation, not sure if it is working
+* [mkscript](mkscript) - a script designed to start making a script with documentation, not sure if it is working
 
-* [ping24net.sh](ping24net) - ping all devices in a /24 subnet
+* [ping24net](ping24net) - ping all devices in a /24 subnet
 
-* [pingtest.sh](pingtest.sh) - ping test if fails writes to file
+* [pingtest](pingtest) - ping test if fails writes to file
 
 * [pyhtml.py](pyhtml.py) - simple python script for a quick and dirty web server
 
@@ -58,19 +58,19 @@ These are some html, css or js and bash files I either wrote or edited to suit m
 
 * [randomSentence.py](randomSentence.py) - Generates an aweful random sentence
 
-* [randomWordgen.sh](randomWordgen.sh) - Generate a random word based on the linux dictionary.
+* [randomWordgen](randomWordgen) - Generate a random word based on the linux dictionary.
 
-* [remotebk.sh](remotebk.sh) - Remote tar and backup a directory
+* [remotebk](remotebk) - Remote tar and backup a directory
 
-* [removeTranslatorPage.sh](removeTranslatorPage.sh) - Use for manga downloader to remove translater pages that get added
+* [removeTranslatorPage](removeTranslatorPage) - Use for manga downloader to remove translater pages that get added
 
 * [sendfilelist](sendfilelist) - sends a list of files in a specific folder
 
-* [shrewVPNconnect.sh](shrewVPNconnect.sh) - Uses the shrewsoft linux software to connect to the VPN on ASA's via the CLI
+* [shrewVPNconnect](shrewVPNconnect) - Uses the shrewsoft linux software to connect to the VPN on ASA's via the CLI
 
 * [syslogdenials.py](syslogdenials.py) - Denials in the ASA syslog
 
-* [ubooquity.sh](ubooquity.sh) - used for ubooquity, I updated the original script to meet my needs as their script stopped working on linux, they now use my script with a few edits
+* [ubooquity](ubooquity) - used for ubooquity, I updated the original script to meet my needs as their script stopped working on linux, they now use my script with a few edits
 
 * [vpnlogins.py](vpnlogins.py) - script to show the logins on a Cisco ASA
 

@@ -10,7 +10,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-PS1="\[\033[38;5;34m\]\u\[\033[0:36;15m\]@\[\033[38;5;27m\]\h \[\033[01;33m\]\w\\[\033[01;00m\] "
+PS1="\[\033[38;5;34m\]\u\[\033[0:36;15m\]@\[\033[38;5;27m\]\h \[\033[01;33m\]\w\\[\033[01;00m\]\n$ "
 #PS1="$(tput setaf 2)\u\[$(tput setaf 6)\]@\$(tput setaf 4)\h \$(tput setaf 3)\w\[\$(tput sgr0)\] "
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -36,5 +36,9 @@ export PAGER="most"
 
 # used to make hostnames not require .ccb
 export HOSTALIASES=~/.hosts
+
+# adding scripts directory to path
+export PATH="$PATH:$HOME/scripts:$HOME/scripts/wcsscripts"
+
 # ubuntu fix for sudo graphical interfaces
 gks () { xhost +si:localuser:root; sudo -H "$@"; xhost -si:localuser:root; }

@@ -1,3 +1,5 @@
+#! /usr/bin/python
+
 ############################################################################################################
 ## The purpose of this script is to take a Cisco ASA syslog and determine the number of connections to 
 ## the VPN vs Disconnects as a measurement of someone attempting to login who does not have credentials.

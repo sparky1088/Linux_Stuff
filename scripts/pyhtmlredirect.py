@@ -1,3 +1,4 @@
+#! /usr/bin/python
 """
 URL redirection example.
 """
