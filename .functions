@@ -33,6 +33,22 @@ function ipreload(){
 sudo /sbin/ifconfig $1 down && sudo /sbin/ifconfig $1 up
 }
 
-function cd_up() {
+function up() {
   cd $(printf "%0.s../" $(seq 1 $1 ));
+}
+
+function addAliasBookmark() {
+    if [[ "$#" -ne 1 ]]
+    then
+        echo "USAGE: addAliasBookmark <alias>"
+        return 0
+    elif [[ -n "$(alias $1 2>/dev/null)" ]]
+    then
+        echo "Alias already exists!"
+        return 0
+    fi
+
+    echo -e "alias $1=\"cd $(pwd)\"" >> ~/.bashrc
+    source ~/.bashrc
+    echo "Alias was added successfully."
 }

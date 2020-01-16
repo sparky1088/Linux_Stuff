@@ -1,0 +1,67 @@
+Poison,Type,Save DC,Fail Effect,Success,More Info,Harvest,Price
+Assasins Blood,Ingested,10,1d12 damage and Poisoned for 24 hrs.,Half damage,-,Craft Using Poisoner's Kit,150 gp
+Basic Poison,Injury,10,Add 1d4 damage,-,-,Craft Using Poisoner's Kit,100 gp
+Burnt Othur Fumes,Inhaled,13,3d6 damage,-,Repeat until 3 successful saves each additional fail is 1d6,Craft Using Poisoner's Kit,500 gp
+Carrion Crawler Mucus,Contact,13,Poisoned for one min..,-,The poisoned creature is paralyzed. Creature can repeat save each turn.,Carrion Crawler,200 gp
+Drow Poison,Injury,13,Poisoned for 1 hr.,-,If creature fails by 5 or more becomes unconsious. The creature wakes up if it takes damage or is shaken awake (takes 1 action),Craft Using Poisoner's Kit (requires recipe),200 gp
+Essence of Ether,Inhaled,15,Poisoned for 8 hrs.,-,The creature becomes unconsious.,Craft Using Poisoner's Kit,300 gp
+Malice,Inhaled,15,Poisoned for 1 hr.,-,The poisoned creature is blinded.,Craft Using Poisoner's Kit,250 gp
+Midnight Tear,Ingested,17,Add 9d6 damage,Half damage,-,Craft Using Poisoner's Kit,1500 gp
+Oil of Taggit,Contact,13,Poisoned for 24 hrs.,-,The posoned creature is unconsious. The creature wakes up if it takes damage or is shaken awake (takes 1 action),Craft Using Poisoner's Kit,400 gp
+Pale Tincture,Ingested,16,Add 1d6 damage and becomes poisoned,-,"The poisoned creature must repeat the saving throw every 24 hours, taking 3 (1d6) poison damage on a failed save. Until this poison ends, the damage the poison deals canâ€™t be healed by any means. After seven successful saving throws, the effect ends and the creature can heal normally",Craft Using Poisoner's Kit,250 gp
+Purple worm poison,Injury,19,12d6 damage,Half damage,-,Purple Worm,2000 gp
+Serpent Venom,Injury,11,Add 3d6 damage,Half damage,-,Giant Poisonous Snake,200 gp
+Torpor,Ingested,15,Poisoned for 4d6 hrs.,-,Poisoned creature is incompasitated.,Craft Using Poisoner's Kit,600 gp
+Truth Serum,Ingested,11,Poisoned for 1 hr.,-,Creature cannot knowingly speak a lie (as if under zone of truth spell).,Craft Using Poisoner's Kit,150 gp
+Wyvern Poison,Injury,15,Add 7d6 damage,Half damage,-,Wyverns,1200 gp
+Basilisk Bile,Contact,-,2d6 damage,-,-,Basalisk,- gp
+Cocatrice,Injury,11,saving throw 2 fails = petrified for 24 hours,-,-,Coctrice,- gp
+Flying Venom,Injury,-,Add 3d4 damage,-,-,Flying Snake,- gp
+Centipede Bile,Injury,10,Add 3d6 damage,Half damage,"If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way",Giant Centipede,- gp
+Scorpion Stinger,Injury,12,Add 4d10 damage,Half damage,-,Giant Scorpion,- gp
+Aracnid Venom,Injury,11,Add 2d8 damage,Half damage,"If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way",Giant Spider,- gp
+Wasp Stinger,Injury,11,Add 3d6 damage,Half damage,"If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way",Giant Wasp,- gp
+Wolf Venom,Injury,11,Add 2d6 damage,Half damage,"If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way",Giant Wolf Spider,200 gp
+Phase Venom,Injury,11,Add 4d8 damage,Half damage,"If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way",Phase Spider,- gp
+Serpent Extract,Injury,10,Add 2d4 damage,Half damage,-,Poisonous Snakes,150 gp
+Scorpion Extract,Injury,9,Add 1d8 damage,Half Damage,-,Scorpion,100 gp
+Spider Extract,Injury,9,Add 1d4 damage,-,-,Spider,100 gp
+Death Gland,Injury,12,Infected with disease and poisoned.,Half Damage,"Every 24 hours, target MUST make Save again - Save: the target is cured of disease - Fail: Maximum HPs redcued by 1d10. Target dies if Max HP reduces to 0. If target is cured Maximum HP restored to previous normal level.",Death Dog,100 gp
+Chuul Tentacles,Contact,13,Poisoned for 1 min.,-,Poisoned creature Paralyzed. Can repeat Save roll at end of each turn. Success ends the effect.,Chuul,- gp
+Coutal Venom,Injury,13,Poisoned for 24 hrs.,-,Poisoned creature is unconscious. The creature wakes up if it takes damage or is shaken awake (takes 1 action),Coutal,- gp
+Dretch Toxin,Inhaled,11,Poisoned for 1 min.,-,"Produces a 10 ft radius. Poisoned creature can either take an action or a bonus action on its turn, not both, and canâ€™t take reactions.",Dretch,- gp
+Quasit Bile,Injury,10,Add 2d4 damage and poisoned for 1 min.,-,Save can be repeated at end of each turn.,Coutal,- gp
+Vrock Spores,Inhaled,14,1d10 damage at start of each turn and poisoned,-,Produces a 15 ft. radius. Save roll can be repeated at end of each turn. Drinking of or pouring holy water on victum also ends poison.,Vrock,- gp
+Yochol Sap,Injury,-,Add 6d6 damage,-,-,Yochol,- gp
+Snake Tenticle Juice,Contact,12,Poisoned for 1 min.,-,"A creature poisoned this way cannot regain hitpoints until it succeeds this save, which it may repeate at the end of each turn.",Bearded Devil,- gp
+Bone Stinger,Injury,-,5d6 damage,-,After being hit with this a DC 14 Con check is made or poisoned for 1 min..,Bone Devil,- gp
+Imp Stinger,Injury,11,Add 3d6 damage,Half damage,-,Imp,- gp
+Fiend Bile,Injury,21,6d6 damage each turn and poisoned.,-,"A creature poisoned this way cannot regain hitpoints until it succeeds this save, which it may repeate at the end of each turn.",Pit Fiend,- gp
+Draco Green Venom,Injury,-,"Age of dragon affects potency: 
+Ancient add 3d6 damage, 
+Adult or Young add 2d6 damage, 
+Wyrmling add 1d6",-,-,Green Dragon,- gp
+Drider Venom,Injury,-,Add 2d8 damage,-,-,Drider,- gp
+Ettercap Bile,Injury,-,Add 1d8 damage,-,After being hit with this a DC 11 Con check is made or poisoned for 1 min. A creature can repeate save on each of its turns.,Ettercap,- gp
+Gas Spore Nodule,Inhaled,15,3d6 damage and infected with desease.,-,"Creatures immune to poison are also imune to this disease. A diseased victim death comes in 1d12+ Victimâ€™s Con hrs., unless disease removed. In half that time, the victim becomes poisoned for rest of duration. After victim dies, it sprouts 2d4 Tiny gas spores that grow to full size in 7 days.",Gas Spore,- gp
+Yeenoghu Bile,Injury,12,Add 2d6 damage,-,-,Gnoll Fang of Yeenoghu,- gp
+Grell Juice,Contact,11,Poisoned for 1 min.,-,Poisoned creature is also paralyzed. Save throw can be repeated each turn ending effect.,Grell,- gp
+Homunculus Extract,Injury,10,Poisoned for 1 min.,-,If save fails by 5 or more the creature is instead posioned for 1d10 minutes and unconsious while poisoned this way.,Homunculus,- gp
+Kraken Ink,Contact,23,3d10 damage,Half damage,-,Kracken,- gp
+Medusa Venom,Injury,-,Add 4d6 damage,-,-,Medusa,- gp
+Myconude Spore Nodule,Inhale,Determined by age,"Sprout(unavoidable) Victums w/ int of 2 or more cannot use telepathy for 1 hr. 
+Adult(11) stunned for 1 minute. 
+Sovereign(12) Poisoned for 1 min. and halucinates while poisoned.",-,Sprout spore nodule does not affect undead constructs or elementals. Saving throws for Adult and Sovereign can be repeated at end of each turn ending effect.,Myconid,- gp
+Bone Venom,Injury,-,Add 3d6 damage,-,-,Bone Naga,- gp
+Spirit Venom,injury,13,Add 7d8 damage,Half damage,-,Spirit Naga,- gp
+Guardian Venom,Injury,15,Add 10d8 damage,Half damage,-,Guardian Naga,- gp
+Otyugh Disease,Injury,15,Become infected and Max hp reduced by 1d10,-,Must make save every 24 hrs. Every fail is an addition 1d10 hp reduction. Once cured hp returns to normal.,Otyugh,- gp
+Draco Stinger,Injury,11,Poisoned for 1 hr.,-,If save is failed by 5 or more creature is also unconscious while poisoned until they take damage or are shaken awake (1 action).,Pseudodragon,- gp
+Sprite Poison,Injury,10,Poisoned for 1 min.,-,If save is failed by 5 or more creature is also unconscious while poisoned until they take damage or are shaken awake (1 action).,Sprite,- gp
+Kreen Bile,Injury,11,Poisoned for 1 min.,-,If save is failed by 5 or more creature is also paralyzed. Save may be repeated at end of each turn. Success ends effect.,Thri-Keen,- gp
+Yuan-ti Venom,Injury,-,"Type determnes effect:
+Malison add 2d6 damage, 
+Abomination add 3d6 damage",-,-,Yuan-ti,- gp
+Arcanaloth Claw,Injury,14,3d6 damage,Half damage,-,Arcanaloth,- gp
+Rat Toxin,Injury,10,Become infected with disease and reduce hp by 1d6,-,Must make save every 24 hrs. Every fail is an addition 1d6 hp reduction. Once cured hp returns to normal.,Giant Deseased Rat,- gp
+Toad Bile,Injury,-,1d10 damage,-,-,Giant Toad,- gp

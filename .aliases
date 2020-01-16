@@ -3,10 +3,12 @@ alias sudo='sudo '
 
 ## Generic
 alias ll='ls -l'
+alias dirs="ls -al | grep '^d'"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias ssh="TERM=linux ssh"
+alias qp="ps auxwww|more"
 alias doMagic="pithos"
 #alias df="df -H"
 # must install pydf for below
@@ -53,6 +55,13 @@ alias nocomment="grep -Ev '''^(#|$)'''"
 alias ff='find . -type f -iname'
 alias fhere="find . -name "
 
+# GIT
+alias gpom="git push origin master"
+alias gs="git status"
+alias gb="git branch"
+alias gco="git checkout"
+alias gad="git add ."
+
 ## if ifup and down aren't working use ifconfig
 ## ifconfig interface down && ifconfig interface up
 alias ifconfig='/sbin/ifconfig'
@@ -75,9 +84,11 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 ## Change according to system
-alias update='sudo dnf update'
+#alias update='sudo dnf update'
 #alias update='yum update'
 #alias updatey='yum -y update'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
 ## All of our servers enp0s25 is connected to the Internets via vlan / router etc  ##
 
 ## Download packages for vnstat,iftop,tcpdump,ethtool

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+## Shows the total number of pages in a given document
+
+echo "$(exiftool $1 | grep Page-count | cut -d ":" -f2 | tr '\n' '+')""0" | bc
