@@ -56,6 +56,8 @@ alias ff='find . -type f -iname'
 alias fhere="find . -name "
 
 # GIT
+## Simple git help because I can never Remember the order
+alias githelp="echo -e 'git add . (add new files) alias=gad\ngit commit (commit the changes made)\ngit push (push to the branch) alias=gpom\ngit status (shows changes that have been made) alias=gs\n-sparky loves alice'"
 alias gpom="git push origin master"
 alias gs="git status"
 alias gb="git branch"
@@ -84,11 +86,26 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 ## Change according to system
+#alias checking for OS and applying correct update command based on it
+_myos="$(uname -a)"
+case $_myos in
+    *Ubuntu*|*Debian*) alias which_update="/bin/echo 'sudo apt-get update && sudo apt upgrade'";;
+    *CentOS*) alias which_update="/bin/echo 'yum update'";;
+    *Fedora*) alias which_update="/bin/echo 'dnf update'" ;;
+    *) alias which_update="/bin/echo 'Update the alias for New OS'";;
+esac
 #alias update='sudo dnf update'
 #alias update='yum update'
 #alias updatey='yum -y update'
-alias update='sudo apt update'
-alias upgrade='sudo apt upgrade'
+#alias update='sudo apt update'
+#alias upgrade='sudo apt upgrade'
+case $_myos in
+    *Ubuntu*|*Debian*) alias update="sudo apt-get update && sudo apt upgrade";;
+    *CentOS*) alias update="sudo yum -y update";;
+    *Fedora*) alias update="sudo dnf update" ;;
+    *) alias update="Update the alias for New OS";;
+esac
+
 ## All of our servers enp0s25 is connected to the Internets via vlan / router etc  ##
 
 ## Download packages for vnstat,iftop,tcpdump,ethtool
@@ -121,9 +138,6 @@ alias pyweb="python -m SimpleHTTPServer $1"
 ## Shrewsoft VPN Help
 alias VPN="/bin/bash $HOME/scripts/shrewVPNconnect.sh"
 alias vpnhelp="echo -e 'shrewVPNconnect.sh can be used to connect to the Cisco VPNs via CLI\nThe VPN command will run shrewVPNconnect.sh\nikec -r ConnName -u USER -p PASSWORD -a \nArk-LasVegas\nArk-Lindon\nArk-Lindonfailover\nBay-Health\nBay-Health-Vegas\nBronx\nDHIN\nHASA\nJHIE\nPOC\nor use vpnstart to launch the ShrewSoft GUI'"
-
-## Simple git help because I can never Remember the order
-alias githelp="echo -e 'git add . (add new files)\ngit commit (commit the changes made)\ngit push (push to the branch)\n-sparky loves alice'"
 
 # work on wlan0 by default #
 # Only useful for laptop as all servers are without wireless interface
