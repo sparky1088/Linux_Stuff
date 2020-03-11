@@ -4,6 +4,8 @@
 ## Adding ldap aliases
 . ~/scripts/ldapfunctions
 . ~/.functions
+## adding host specific aliases
+. ~/.aliases_hostSpecific
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
