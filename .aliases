@@ -2,6 +2,7 @@
 alias sudo='sudo '
 
 ## Generic
+alias clock='xclock -chime &'
 alias ll='ls -l'
 alias dirs="ls -al | grep '^d'"
 alias grep='grep --color=auto'
@@ -15,7 +16,7 @@ alias doMagic="pithos"
 alias df='pydf -h'
 alias today='cal | grep -C7 --color=auto "\<$(date +%Oe)\>"'
 alias calloop='while true;do clear; today; sleep 30m; done'
-alias rand="/bin/bash $HOME/scripts/randomwordgen.sh"
+alias rand="/bin/bash $HOME/scripts/randomwordgen"
 alias chbg="/bin/bash $HOME/scripts/backgroundchanger.sh"
 alias changebg="chbg"
 alias vpnstart="sudo iked;qikea"
@@ -28,7 +29,7 @@ alias ping="ping -c 5"
 alias tping="time ping -c 5"
 alias trace="traceroute"
 alias tracert="traceroute"
-alias pping="$HOME/prettyping -c 5"
+alias pping="/usr/bin/prettyping -c 5"
 alias bashreload="source ~/.bashrc"
 alias reloadbash="bashreload"
 alias freem="free -hm"
@@ -218,3 +219,6 @@ alias zshow='zfs list -o name,used,refer,creation -t snapshot -r'
 
 ## test
 alias lsl='ls -l --color=no'
+
+## Google Admin CLI
+alias gam="$HOME/bin/gamadv-xtd3/gam"
