@@ -3,7 +3,8 @@ alias sudo='sudo '
 
 ## Generic
 alias clock='xclock -chime &'
-alias ll='ls -l'
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
 alias dirs="ls -al | grep '^d'"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -41,6 +42,7 @@ alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 alias count='find . -type f | wc -l'
 alias blip="echo -ne '\007'"
+alias cht.sh="cheatsheet"
 
 ## Quick Movements
 alias 'cd..'='cd ..'
@@ -207,6 +209,8 @@ alias xtermfix="xrdb ~/.X*"
 alias pictures="xterm -bg black -fg grey -ti vt340"
 ## Pictures in xterm
 alias lsix="$HOME/scripts/lsix"
+## xclock
+alias fix_clock="/usr/bin/xrdb -load $HOME/xclock"
 
 ## Blade software IPMIview
 alias bladectl='$HOME/programs/IPMIView_2.14.0_build.180213_bundleJRE_Linux_x64/IPMIView20'
@@ -222,3 +226,9 @@ alias lsl='ls -l --color=no'
 
 ## Google Admin CLI
 alias gam="$HOME/bin/gamadv-xtd3/gam"
+
+## Winbox for Mikrotik
+alias winbox='wine $HOME/programs/winbox64.exe'
+
+## Ookla speedtest
+alias speedtest='$HOME/programs/speedtest'

@@ -42,5 +42,6 @@ export HOSTALIASES=~/.hosts
 # adding scripts directory to path
 export PATH="$PATH:$HOME/scripts:$HOME/scripts/wcsscripts"
 
+
 # ubuntu fix for sudo graphical interfaces
 gks () { xhost +si:localuser:root; sudo -H "$@"; xhost -si:localuser:root; }

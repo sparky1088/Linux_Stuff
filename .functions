@@ -72,3 +72,6 @@ stopwatch(){
     sleep 0.1
     done
 }
+cheatsheet(){
+    curl cheat.sh/"$1"
+}
