@@ -1,0 +1,15 @@
+##### SESSIONS #####
+new-session -s main -d
+#send-keys 'sysinfo' C-m
+split-window -d -t 0 -h -p 25 
+split-window -d -t 1 -v 
+#split-window -d -t 2 -v -p 50
+#split-window -d -t 3 -v
+#send-keys -t 2 'vpnstart' C-m
+send-keys -t 2 'xclock &' C-m
+#send-keys -t 1 '#chbg' C-m
+send-keys -t 1 'pal' C-m
+send-keys -t 2 'doMagic' C-m
+#send-keys -t 3 'pal' C-m
+#send-keys -t 2 'calloop' enter C-l
+send-keys -t 0 '' C-m

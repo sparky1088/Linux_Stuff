@@ -1,0 +1,37 @@
+new-session -s monitoring -n htop
+send-keys -l 'htop' 
+send-keys ENTER
+new-window -n bmon 
+send-keys -l 'bmon'
+send-keys ENTER
+new-window -n iftop
+send-keys -l '#iftop must be run as sudo'
+send-keys ENTER
+new-window -n iotop 
+send-keys -l '#iotop must be run as sudo'
+send-keys ENTER
+new-window -n nethogs 
+send-keys -l '#nethogs must be run as sudo'
+send-keys ENTER
+new-window -n ethtool 
+send-keys -l 'ethtool'
+send-keys ENTER
+new-window -n tcpdump 
+send-keys -l '#tcpdump must be run as sudo, -i any for any interface'
+send-keys ENTER
+new-window -n traceroute 
+send-keys -l 'traceroute google.com'
+send-keys ENTER
+new-window -n mtr 
+send-keys -l 'mtr google.com'
+send-keys ENTER
+new-window -n nmon 
+send-keys -l 'nmon'
+send-keys ENTER
+new-window -n vmstat 
+send-keys -l 'vmstat'
+send-keys ENTER
+new-window -n vnstat 
+send-keys -l 'vnstat'
+send-keys ENTER
+

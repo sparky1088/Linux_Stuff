@@ -1,5 +1,5 @@
 # .bashrc
-#include Files for alias, functions and ldap functions
+# include Files for alias, functions and ldap functions
 . ~/.aliases
 ## Adding ldap aliases
 . ~/scripts/ldapfunctions

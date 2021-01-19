@@ -212,6 +212,9 @@ alias lsix="$HOME/scripts/lsix"
 ## xclock
 alias fix_clock="/usr/bin/xrdb -load $HOME/xclock"
 
+## tmux monitoring session
+#alias tmux_mon="tmux -L Monitoring $HOME/.tmuxMon.conf"
+
 ## Blade software IPMIview
 alias bladectl='$HOME/programs/IPMIView_2.14.0_build.180213_bundleJRE_Linux_x64/IPMIView20'
 
