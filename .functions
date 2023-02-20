@@ -75,3 +75,7 @@ stopwatch(){
 cheatsheet(){
     curl cheat.sh/"$1"
 }
+days_until () {
+        x=`date -d "$1 $2" +%j`; y=$((10#$x-10#`date +%j`)); echo $y
+#add logic for year at some point
+}
