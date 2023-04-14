@@ -79,3 +79,11 @@ days_until () {
         x=`date -d "$1 $2" +%j`; y=$((10#$x-10#`date +%j`)); echo $y
 #add logic for year at some point
 }
+days_away () {
+         #y=$((10#`date +%j`+10#$1)); echo $y
+         day=$(date -d "$date +$1 days" +"%a the %d %b %Y"); echo $day
+}
+days_past () {
+        #day=$(date -d "$date -$1 days" +"%Y%m%d" ); echo $day
+        day=$(date -d "$date -$1 days" +"%a the %d %b %Y" ); echo $day
+}
