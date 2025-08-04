@@ -130,7 +130,7 @@ alias myip="curl icanhazip.com"
 
 ## shortcut  for iptables and pass it via sudo#
 alias ipt='sudo /sbin/iptables'
- 
+
 # display all rules #
 alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
 alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
@@ -138,7 +138,7 @@ alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
 alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
 alias firewall=iptlist
 alias iptpreroute='sudo /sbin/iptables -t nat -L --line-numbers'
-alias prerouteDel='sudo /sbin/iptables -t nat -D PREROUTING $1'
+alias prerouteDel='sudo /sbin/iptables -t nat -D PREROUTING' # expects argument
 
 ## remoting into windows machines
 alias remote='rdesktop -g 1820x980'
@@ -150,7 +150,7 @@ alias remote='rdesktop -g 1820x980'
 alias py='python'
 alias webserver="python $HOME/scripts/pyhtml.py"
 alias web8080="python -m SimpleHTTPServer 8080"
-alias pyweb="python -m SimpleHTTPServer $1"
+alias pyweb='python -m SimpleHTTPServer' # expects argument
 
 ## Shrewsoft VPN Help
 alias VPN="/bin/bash $HOME/scripts/shrewVPNconnect.sh"
@@ -163,15 +163,15 @@ alias iwconfig='iwconfig wlan0'
 # some memory info
 alias vmstat='vmstat -w 5'
 alias meminfo='free -m -h -l -t'
- 
+
 ## get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
- 
+
 ## get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
- 
+
 ## Get server cpu info ##
 alias cpuinfo='lscpu'
 
@@ -198,10 +198,11 @@ alias colortest2='/bin/bash $HOME/scripts/colortest'
 alias colortest3='for x in {0..8}; do for i in {30..37}; do for a in {40..47}; do echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "; done; echo; done; done; echo ""'
 
 ## Some History Commands
-alias hist10="awk '{print $1}' ~/.bash_history | sort | uniq -c | sort -rn | head -n 10"
-
+hist10(){
+    awk '{print $1}' ~/.bash_history | sort | uniq -c | sort -rn | head -n 10
+}
 ## Useless but fun
-alias busy="cat /dev/urandom | hexdump -C | grep --color=never 'ca fe'" 
+alias busy="cat /dev/urandom | hexdump -C | grep --color=never 'ca fe'"
 
 ## XTerm Fix
 alias xtermfix="xrdb ~/.X*"
